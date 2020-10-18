@@ -1,0 +1,19 @@
+<div>
+  <mat-form-field class="example-full-width">
+    <mat-label>Search For any user</mat-label>
+    <input matInput placeholder="username" name="username" #user="ngModel" [(ngModel)]="username">
+  </mat-form-field>
+  <button mat-raised-button (click)="search()">Search</button>
+</div>
+
+
+<section class="section" *ngIf="users">
+  <div class="container">
+    <div class="columns is-multiline">
+      <!-- loop over our users and give them each a card -->
+      <div class="column is-4" *ngFor="let item of users">
+        <app-users [user]="item"></app-users>
+      </div>
+    </div>
+  </div>
+</section>

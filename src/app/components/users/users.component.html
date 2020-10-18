@@ -1,0 +1,26 @@
+<div *ngIf="dataLoaded">
+    <ng-container *ngIf="repos?.length; else noRepo">
+        <h5>
+            User "{{user.login}}" with {{followers?.length || 0}} followers is following {{following?.length || 0}}.
+            One of the repo for this user is {{repos[0].name}} and it is {{repos[0].isPrivate ? '' : 'not'}} private.
+        </h5>
+    </ng-container>
+    <ng-template #noRepo>
+        <h5>
+            User The {{user.login}} with {{followers?.length || 0}} followers is following {{following?.length || 0}}.
+            User has no Repos.
+        </h5>
+    </ng-template>
+    <div className="follow-block">
+        <button mat-raised-button color="primary">Followers: {{followers?.length || 0}}</button>
+        <button mat-raised-button (click)="onFollowingClick()" color="primary">Following: {{totalFollowing}}</button>
+    </div>
+    <div *ngIf="following?.length">
+        <h3>{{user.login}} Following</h3>
+        <ul *ngFor="let list of following">
+            <li>
+                {{list.login}}
+            </li>
+        </ul>
+    </div>
+</div>
