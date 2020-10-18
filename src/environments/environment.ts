@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   gitHubUrl: "https://api.github.com",
-  gitHubAuthToken: '95624b7136d00f325d609bbdc8a5d9dec495de70'
+  gitHubAuthToken: '4c24f29b66d103711919d88ac5ae43213238b53e'
 };
 
 /*
